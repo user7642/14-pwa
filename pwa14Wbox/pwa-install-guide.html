@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn sử dụng App Học Cờ</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 15px;
+            background: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        h2 { color: #2c3e50; text-align: center; margin-bottom: 20px; font-size: 20px; }
+        
+        .step-header {
+            background: #ff9800;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .copy-box {
+            background: #fff8f0;
+            border: 1px dashed #ff9800;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .url-text {
+            background: #eee;
+            padding: 10px;
+            border-radius: 6px;
+            display: block;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 12px;
+            word-break: break-all;
+        }
+        .btn-copy {
+            background: #ff9800;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        .device-guide {
+            background: #fcfcfc;
+            border: 1px solid #eee;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+        .highlight { color: #d35400; font-weight: bold; }
+        .icon-box { background: #ddd; padding: 2px 6px; border-radius: 4px; font-size: 13px; font-weight: bold; }
+        
+        .info-box {
+            background: #e1f5fe;
+            border-left: 5px solid #0288d1;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin: 20px 0;
+        }
+
+        .qr-section { text-align: center; padding-top: 15px; border-top: 1px solid #eee; margin-top: 20px; }
+        .qr-section img { width: 140px; margin: 10px 0; border: 1px solid #eee; padding: 5px; border-radius: 8px; }
+
+        .note { font-size: 13px; color: #666; font-style: italic; margin-top: 5px; }
+        .back-link { display: block; text-align: center; margin-top: 15px; color: #888; text-decoration: none; font-size: 14px; }
+        
+        ol { padding-left: 20px; margin: 10px 0; font-size: 14px; }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Hướng dẫn Truy cập & Cài đặt</h2>
+
+    <div class="info-box">
+        <b>💡 Bạn có biết?</b> Đây là ứng dụng công nghệ mới (PWA). Bạn có thể dùng trực tiếp trên trình duyệt hoặc cài thành App để có icon ngoài màn hình và dùng mượt hơn (có thể dùng offline). Nội dung và chất lượng là như nhau!
+    </div>
+
+    <div class="step-header">BƯỚC 1: SAO CHÉP LIÊN KẾT</div>
+    <div class="copy-box">
+        <p style="margin-top:0; font-size:14px;">Để cài đặt được App, vui lòng sao chép link và mở bằng trình duyệt <b>Chrome</b> hoặc <b>Safari</b>:</p>
+        <span class="url-text" id="urlText">https://user7642.github.io/share1/world-flags/</span>
+        <button class="btn-copy" onclick="copyUrl()">COPY LINK</button>
+    </div>
+
+    <div class="step-header">BƯỚC 2: CÁCH TRUY CẬP NHANH</div>
+    
+    <div class="device-guide">
+        <strong style="color: #4285F4;">🤖 Điện thoại Android (Dùng Chrome):</strong>
+        <ol>
+            <li>Dán link vừa copy vào trình duyệt <b>Google Chrome</b>.</li>
+            <li>Nhấn vào dấu <span class="icon-box">⋮</span> ở góc trên bên phải.</li>
+            <li>Chọn dòng <b>"Thêm vào Màn hình chính"</b>.</li>
+            <li>Tại bảng hiện ra, nhấn chọn dòng <b>"Cài đặt"</b> (có biểu tượng mũi tên tải xuống).</li>
+        </ol>
+        <p class="note">Nếu không muốn cài, bạn có thể chọn "Dấu trang" ⭐ để lưu lại trong trình duyệt.</p>
+    </div>
+
+    <div class="device-guide">
+        <strong style="color: #4285F4;">💻 Máy tính (PC/Laptop):</strong>
+        <ol>
+            <li>Mở link bằng trình duyệt <b>Google Chrome</b>.</li>
+            <li>Nhấn vào biểu tượng <span class="icon-box">⤓</span> (Cài đặt) hoặc dấu <span class="icon-box">+</span> ở góc phải thanh địa chỉ.</li>
+            <li>Chọn <b>"Cài đặt"</b> để đưa App ra màn hình chính.</li>
+        </ol>
+        <p class="note">Nếu không muốn cài, bạn có thể nhấn <b>Ctrl + D</b> để lưu vào thanh Dấu trang.</p>
+    </div>
+
+    <div class="device-guide" style="border-left: 4px solid #007AFF;">
+        <strong style="color: #007AFF;">🍎 iPhone / iPad (Dùng Safari):</strong>
+        <ol>
+            <li>Mở link bằng trình duyệt <b>Safari</b> (biểu tượng la bàn).</li>
+            <li>Nhấn biểu tượng Chia sẻ <span class="icon-box">⎋</span> ở bên dưới màn hình.</li>
+            <li>Chọn <b>"Thêm vào MH chính"</b>.</li>
+        </ol>
+    </div>
+
+    <div class="info-box" style="background: #fff3e0; border-left-color: #ff9800;">
+        <b>❓ Tại sao nên dùng Google Chrome?</b> Trình duyệt này hỗ trợ công nghệ PWA mạnh mẽ nhất, cho phép cài đặt ứng dụng chỉ với 1 lần nhấn. Các trình duyệt khác thường bị lược bỏ tính năng này nên khuyến nghị bạn dùng Chrome để có trải nghiệm tốt nhất.
+    </div>
+
+    <div class="qr-section">
+        <p style="font-weight: bold; font-size: 14px; margin-bottom: 5px;">Hoặc quét mã QR để mở nhanh:</p>
+        <img src="qr-install.png" alt="Mã QR">
+        <p class="note">Sau khi quét, dán link vào <b>Chrome</b> hoặc <b>Safari</b> để cài đặt.</p>
+    </div>
+
+    <a href="index.html" class="back-link">← Quay lại trang chủ</a>
+</div>
+
+<script>
+    function copyUrl() {
+        const url = document.getElementById('urlText').innerText;
+        const btn = document.querySelector('.btn-copy');
+        const textArea = document.createElement("textarea");
+        textArea.value = url;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        const oldText = btn.innerText;
+        btn.innerText = 'ĐÃ SAO CHÉP!';
+        btn.style.background = '#2ecc71';
+        setTimeout(() => {
+            btn.innerText = oldText;
+            btn.style.background = '#ff9800';
+        }, 2000);
+    }
+</script>
+
+</body>
+</html>

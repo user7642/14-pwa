@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>PWA Hoc Tu Vung Tre Em</title>
+  <meta name="theme-color" content="#4f46e5">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./favicon.ico">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>PWA Hoc Tu Vung Tre Em</h1>
+    <p>Hoc offline voi hinh anh va am thanh</p>
+  </header>
+
+  <div id="network-indicator" class="network-indicator online">Online</div>
+
+  <section id="download-overlay" class="overlay hidden" aria-live="polite">
+    <div class="overlay-card">
+      <h2>Dang tai media...</h2>
+      <p><span id="download-count">0 / 0 files</span></p>
+      <p><span id="download-percent">0%</span></p>
+      <div class="progress">
+        <div id="download-bar" class="progress-fill"></div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="toolbar">
+      <div class="lang-switch" role="group" aria-label="Chọn ngôn ngữ phát âm">
+        <button id="lang-vi" class="lang-btn is-active" type="button" aria-pressed="true">VN Tiếng Việt</button>
+        <button id="lang-en" class="lang-btn" type="button" aria-pressed="false">US English</button>
+      </div>
+      <button id="retry-download" class="btn-secondary hidden" type="button">Tai lai media loi</button>
+    </section>
+    <section id="vocab-accordion" class="accordion" aria-label="Danh sach tu vung"></section>
+    <p id="empty-state" class="empty-state hidden">Chua co du lieu media. Hay chay script tao manifest va them file media.</p>
+    <footer class="hint">
+      <p>👉 Bấm để mở chủ đề</p>
+      <p>🔊 Bấm hình để nghe</p>
+    </footer>
+  </main>
+
+  <template id="vocab-card-template">
+    <article class="card" tabindex="0">
+      <img alt="" loading="lazy">
+      <h3></h3>
+    </article>
+  </template>
+
+  <script type="module" src="./assets/js/app.js"></script>
+</body>
+</html>

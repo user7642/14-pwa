@@ -1,0 +1,14 @@
+body | Cơ thể
+fruits | Trái cây
+alphabet | Bảng chữ cái
+colors | Màu sắc
+flowers | Các loài hoa
+jobs | Nghề nghiệp
+numbers | Số đếm
+pets | Động vật nuôi
+shapes | Hình khối
+vehicles | Phương tiện
+wild | Động vật hoang dã
+insects | Côn trùng
+sea | Động vật dưới nước
+vegetables | Rau củ
