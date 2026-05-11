@@ -14,20 +14,12 @@ const els = {
   accordion: document.querySelector("#vocab-accordion"),
   empty: document.querySelector("#empty-state"),
   retryButton: document.querySelector("#retry-download"),
-  network: document.querySelector("#network-indicator"),
   cardTemplate: document.querySelector("#vocab-card-template"),
   langVi: document.querySelector("#lang-vi"),
   langEn: document.querySelector("#lang-en"),
 };
 
 let preferredLang = "vi";
-
-function updateNetworkIndicator() {
-  const online = navigator.onLine;
-  els.network.textContent = online ? "Online" : "Offline";
-  els.network.classList.toggle("online", online);
-  els.network.classList.toggle("offline", !online);
-}
 
 function setOverlay(visible) {
   els.overlay.classList.toggle("hidden", !visible);
@@ -416,10 +408,6 @@ async function syncMedia(db, meta) {
 }
 
 async function boot() {
-  updateNetworkIndicator();
-  window.addEventListener("online", updateNetworkIndicator);
-  window.addEventListener("offline", updateNetworkIndicator);
-
   await registerServiceWorker();
   await initOPFS();
   const db = await openDB();

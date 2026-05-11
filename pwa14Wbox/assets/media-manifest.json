@@ -3817,12 +3817,6 @@
   },
   {
     "type": "image",
-    "path": "image/insects/moth.png",
-    "url": "./assets/media/image/insects/moth.png",
-    "size": 2226409
-  },
-  {
-    "type": "image",
     "path": "image/insects/praying-mantis.png",
     "url": "./assets/media/image/insects/praying-mantis.png",
     "size": 1606458
@@ -3904,12 +3898,6 @@
     "path": "image/jobs/painter.png",
     "url": "./assets/media/image/jobs/painter.png",
     "size": 824708
-  },
-  {
-    "type": "image",
-    "path": "image/jobs/pilot.png",
-    "url": "./assets/media/image/jobs/pilot.png",
-    "size": 1323644
   },
   {
     "type": "image",
