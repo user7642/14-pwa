@@ -11,7 +11,7 @@
       },
       "icon": "🍎",
       "description": "Tìm hiểu về các loại quả thơm ngon",
-      "zipUrl": "./fruits.zip",
+      "zipUrl": "Vhttps://github.com/user7642/pwa-assets/releases/download/v1/fruits-v1.zip",
       "size": "32MB",
       "v": 1
     },
@@ -23,7 +23,7 @@
       },
       "icon": "🐶",
       "description": "Làm quen với những người bạn nhỏ trong nhà",
-      "zipUrl": "./pets.zip",
+      "zipUrl": "https://github.com/user7642/pwa-assets/releases/download/v1/pets-v1.zip",
       "size": "32.7MB",
       "v": 1
     }
