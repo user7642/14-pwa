@@ -8,3 +8,10 @@ Thumbs.db
 *.log
 
 # LƯU Ý: KHÔNG có dòng chặn *.zip ở đây để Git có thể tải file zip lên.
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
