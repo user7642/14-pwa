@@ -1,0 +1,147 @@
+.
+├── assets
+│   ├── branding
+│   │   ├── logo.png
+│   │   └── logo.svg
+│   ├── icons
+│   │   ├── icon-192.png
+│   │   └── icon-512.png
+│   └── zips
+│       ├── fruits.zip
+│       └── pets.zip
+├── build-zip.sh
+├── css
+│   └── style.css
+├── data.json
+├── favicon.ico
+├── index.html
+├── js
+│   ├── app.js
+│   ├── downloader.js
+│   ├── storage.js
+│   └── ui-manager.js
+├── manifest.json
+├── media
+│   ├── fruits
+│   │   ├── img
+│   │   │   ├── banana.png
+│   │   │   ├── bayberry.png
+│   │   │   ├── cherry.png
+│   │   │   ├── custard-apple.png
+│   │   │   ├── dragon-fruit.png
+│   │   │   ├── durian.png
+│   │   │   ├── grape.png
+│   │   │   ├── guava.png
+│   │   │   ├── longan.png
+│   │   │   ├── lychee.png
+│   │   │   ├── mango.png
+│   │   │   ├── mangosteen.png
+│   │   │   ├── orange.png
+│   │   │   ├── papaya.png
+│   │   │   ├── pineapple.png
+│   │   │   ├── pomelo.png
+│   │   │   ├── rambutan.png
+│   │   │   ├── sapodilla.png
+│   │   │   ├── star-fruit.png
+│   │   │   ├── strawberry.png
+│   │   │   └── watermelon.png
+│   │   ├── manifest.json
+│   │   └── mp3
+│   │       ├── en
+│   │       │   ├── banana.mp3
+│   │       │   ├── cherry.mp3
+│   │       │   ├── custard-apple.mp3
+│   │       │   ├── dragon-fruit.mp3
+│   │       │   ├── durian.mp3
+│   │       │   ├── grape.mp3
+│   │       │   ├── guava.mp3
+│   │       │   ├── longan.mp3
+│   │       │   ├── lychee.mp3
+│   │       │   ├── mango.mp3
+│   │       │   ├── mangosteen.mp3
+│   │       │   ├── orange.mp3
+│   │       │   ├── papaya.mp3
+│   │       │   ├── pineapple.mp3
+│   │       │   ├── pomelo.mp3
+│   │       │   ├── rambutan.mp3
+│   │       │   ├── sapodilla.mp3
+│   │       │   ├── star-fruit.mp3
+│   │       │   ├── strawberry.mp3
+│   │       │   └── watermelon.mp3
+│   │       └── vi
+│   │           ├── banana.mp3
+│   │           ├── cherry.mp3
+│   │           ├── custard-apple.mp3
+│   │           ├── dragon-fruit.mp3
+│   │           ├── durian.mp3
+│   │           ├── grape.mp3
+│   │           ├── guava.mp3
+│   │           ├── longan.mp3
+│   │           ├── lychee.mp3
+│   │           ├── mango.mp3
+│   │           ├── mangosteen.mp3
+│   │           ├── orange.mp3
+│   │           ├── papaya.mp3
+│   │           ├── pineapple.mp3
+│   │           ├── pomelo.mp3
+│   │           ├── rambutan.mp3
+│   │           ├── sapodilla.mp3
+│   │           ├── star-fruit.mp3
+│   │           ├── strawberry.mp3
+│   │           └── watermelon.mp3
+│   └── pets
+│       ├── img
+│       │   ├── buffalo.png
+│       │   ├── cat.png
+│       │   ├── cow.png
+│       │   ├── dog.png
+│       │   ├── duck.png
+│       │   ├── goat.png
+│       │   ├── goose.png
+│       │   ├── guinea-fowl.png
+│       │   ├── hen.png
+│       │   ├── horse.png
+│       │   ├── pigeon.png
+│       │   ├── pig.png
+│       │   ├── rabbit.png
+│       │   ├── rooster.png
+│       │   └── turkey.png
+│       ├── manifest.json
+│       └── mp3
+│           ├── en
+│           │   ├── buffalo.mp3
+│           │   ├── cat.mp3
+│           │   ├── cow.mp3
+│           │   ├── dog.mp3
+│           │   ├── duck.mp3
+│           │   ├── goat.mp3
+│           │   ├── goose.mp3
+│           │   ├── guinea-fowl.mp3
+│           │   ├── hen.mp3
+│           │   ├── horse.mp3
+│           │   ├── pigeon.mp3
+│           │   ├── pig.mp3
+│           │   ├── rabbit.mp3
+│           │   ├── rooster.mp3
+│           │   └── turkey.mp3
+│           └── vi
+│               ├── buffalo.mp3
+│               ├── cat.mp3
+│               ├── cow.mp3
+│               ├── dog.mp3
+│               ├── duck.mp3
+│               ├── goat.mp3
+│               ├── goose.mp3
+│               ├── guinea-fowl.mp3
+│               ├── hen.mp3
+│               ├── horse.mp3
+│               ├── pigeon.mp3
+│               ├── pig.mp3
+│               ├── rabbit.mp3
+│               ├── rooster.mp3
+│               └── turkey.mp3
+├── README.html
+├── sw.js
+└── tree.txt
+
+18 directories, 127 files

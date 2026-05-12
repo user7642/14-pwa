@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tài liệu Kiến trúc Dự án KidSpeak PWA</title>
+    <style>
+        
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
+h1, h2, h3 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+.card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.tech-stack { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; }
+.tech-stack li { background: #3498db; color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.9em; }
+code { background: #eee; padding: 2px 5px; border-radius: 4px; font-family: monospace; }
+.highlight { color: #e74c3c; font-weight: bold; }
+table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+th, td { text-align: left; padding: 12px; border-bottom: 1px solid #ddd; }
+th { background-color: #3498db; color: white; }
+
+    </style>
+</head>
+<body>
+    <h1>Tài liệu Kiến trúc Dự án: KidSpeak</h1>
+    <p><em>Cập nhật lần cuối: 13/05/2026 - Mục tiêu: Tài liệu hóa để nắm bắt nhanh sau thời gian dài không tiếp xúc.</em></p>
+
+    <div class="card">
+        <h2>1. Tổng quan dự án</h2>
+        <p>KidSpeak là một <strong>Progressive Web App (PWA)</strong> hỗ trợ giáo dục cho trẻ em, cung cấp nội dung đa phương tiện (âm thanh, hình ảnh) theo chủ đề. Dự án tập trung vào tính năng <strong>Offline First</strong>, cho phép phụ huynh tải và sử dụng tài nguyên mà không cần internet thường xuyên.</p>
+        <ul class="tech-stack">
+            <li>HTML5/CSS3</li>
+            <li>Vanilla JavaScript</li>
+            <li>Service Worker</li>
+            <li>PWA (Web Manifest)</li>
+            <li>JSON-based Data</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>2. Cấu trúc thư mục (File System)</h2>
+        <pre>
+/
+├── index.html          # Giao diện chính (Accordion, Layout)
+├── manifest.json       # Cấu hình PWA
+├── sw.js               # Service Worker (Chiến lược Cache First)
+├── data.json           # Dữ liệu chủ đề, file ZIP, kích thước
+├── css/
+│   └── style.css       # Style chính (đã tối ưu căn giữa & responsive)
+└── js/
+    ├── app.js          # Logic khởi tạo và quản lý chung
+    ├── storage.js      # Xử lý lưu trữ IndexedDB/LocalStorage
+    ├── downloader.js   # Logic tải và giải nén tệp ZIP
+    └── ui-manager.js   # Xử lý render giao diện động
+        </pre>
+    </div>
+
+    <div class="card">
+        <h2>3. Chiến lược Cache & Offline (sw.js)</h2>
+        <p>Dự án sử dụng chiến lược <span class="highlight">Cache First</span>:</p>
+        <ul>
+            <li><strong>Install Event:</strong> Cache các file "core" (CSS, JS, Logo).</li>
+            <li><strong>Fetch Event:</strong> 
+                <ul>
+                    <li>Ưu tiên trả về từ Cache. Nếu không có mới thực hiện <code>fetch</code>.</li>
+                    <li>Hỗ trợ <code>status: 0</code> (Opaque responses) cho tài nguyên từ domain khác.</li>
+                    <li>Bỏ qua các URL không phải HTTP (như chrome-extension).</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>4. Các thành phần quan trọng đã tối ưu</h2>
+        <table>
+            <tr>
+                <th>Thành phần</th>
+                <th>Mô tả / Lưu ý quan trọng</th>
+            </tr>
+            <tr>
+                <td><strong>Dòng hướng dẫn</strong></td>
+                <td>Sử dụng <code>width: fit-content</code> và <code>margin: auto</code> để căn giữa tuyệt đối 1 dòng.</td>
+            </tr>
+            <tr>
+                <td><strong>Dữ liệu (data.json)</strong></td>
+                <td>Trường <code>size</code> hiện là metadata (chưa tham gia logic hiển thị nhưng dùng để dự báo dung lượng).</td>
+            </tr>
+            <tr>
+                <td><strong>Service Worker</strong></td>
+                <td>Đã fix lỗi chặn các URL chrome-extension và hỗ trợ lưu tài nguyên ngoại vi.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>5. Quy trình thêm nội dung mới</h2>
+        <ol>
+            <li>Cập nhật file ZIP vào thư mục <code>assets/zips/</code>.</li>
+            <li>Khai báo thông tin mới (id, title, size, url) vào <code>data.json</code>.</li>
+            <li>Nếu có thay đổi quan trọng về file hệ thống, tăng version <code>CACHE_NAME</code> trong <code>sw.js</code> để ứng dụng cập nhật.</li>
+        </ol>
+    </div>
+</body>
+</html>
