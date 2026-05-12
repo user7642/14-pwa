@@ -1,0 +1,10 @@
+# 1. CHẶN thư mục media gốc (vì nó rất nặng và đã có bản nén zip thay thế)
+KidSpeak-App/media/
+
+# 2. CHẶN các file rác hệ thống và file tạm
+KidSpeak-App/tree.txt
+.DS_Store
+Thumbs.db
+*.log
+
+# LƯU Ý: KHÔNG có dòng chặn *.zip ở đây để Git có thể tải file zip lên.

@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-05-12",
+  "storagePrefix": "media/",
+  "topics": [
+    {
+      "id": "fruits",
+      "title": {
+        "vi": "Trái cây",
+        "en": "Fruits"
+      },
+      "icon": "🍎",
+      "description": "Tìm hiểu về các loại quả thơm ngon",
+      "zipUrl": "./fruits.zip",
+      "size": "32MB",
+      "v": 1
+    },
+    {
+      "id": "pets",
+      "title": {
+        "vi": "Vật nuôi",
+        "en": "Pets"
+      },
+      "icon": "🐶",
+      "description": "Làm quen với những người bạn nhỏ trong nhà",
+      "zipUrl": "./pets.zip",
+      "size": "32.7MB",
+      "v": 1
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>KidSpeak - Project Blueprint</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --bg: #f8f9fa;
+        }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: var(--primary); background: var(--bg); padding: 40px; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        h1 { border-bottom: 3px solid var(--accent); padding-bottom: 10px; color: var(--accent); }
+        .flow-step { display: flex; align-items: center; margin-bottom: 20px; background: #eef2f7; padding: 15px; border-radius: 8px; border-left: 5px solid var(--accent); }
+        .step-num { font-size: 24px; font-weight: bold; margin-right: 20px; color: var(--accent); min-width: 30px; }
+        code { background: #272822; color: #f8f8f2; padding: 2px 6px; border-radius: 4px; font-family: 'Consolas', monospace; }
+        .structure { background: #2c3e50; color: #ecf0f1; padding: 20px; border-radius: 8px; overflow-x: auto; }
+        .highlight { color: #e67e22; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📘 KidSpeak Project Blueprint</h1>
+    <p>Dự án PWA giáo dục đa ngôn ngữ sử dụng cơ chế lưu trữ Offline (OPFS).</p>
+
+    <h3>1. Luồng hoạt động (Execution Flow)</h3>
+    
+    <div class="flow-step">
+        <div class="step-num">01</div>
+        <div>
+            <strong>Khởi tạo:</strong> <code>app.js</code> đọc <code>data.json</code> ở thư mục gốc để biết danh sách các chủ đề (Topics) và Link tải ZIP từ GitHub.
+        </div>
+    </div>
+
+    <div class="flow-step">
+        <div class="step-num">02</div>
+        <div>
+            <strong>Kiểm tra Media:</strong> App check file <code>manifest.json</code> trong folder <code>media/</code>. 
+            <br>• <strong>Dev:</strong> Đọc trực tiếp qua Symlink.
+            <br>• <strong>Prod:</strong> Check trong bộ nhớ trình duyệt (OPFS).
+        </div>
+    </div>
+
+    <div class="flow-step">
+        <div class="step-num">03</div>
+        <div>
+            <strong>Tải & Giải nén:</strong> Nếu chưa có dữ liệu, <code>downloader.js</code> tải ZIP, dùng <code>JSZip</code> xả nén và <code>storage.js</code> ghi vào OPFS.
+        </div>
+    </div>
+
+    <div class="flow-step">
+        <div class="step-num">04</div>
+        <div>
+            <strong>Tương tác:</strong> Người dùng chọn ngôn ngữ (VN/EN) -> <code>app.js</code> thay đổi biến <code>currentLang</code> -> Map đường dẫn ảnh/âm thanh tương ứng để hiển thị.
+        </div>
+    </div>
+
+    <h3>2. Cấu trúc thư mục quan trọng</h3>
+    <div class="structure">
+<pre>
+KidSpeak-App/
+├── data.json           <-- "Bản đồ tổng" chứa danh sách Topic & Link ZIP
+├── index.html          <-- Giao diện chính (Accordion)
+├── media/              <-- Symlink trỏ tới Media/topics/ (Dùng khi Dev)
+├── js/
+│   ├── app.js          <-- Điều khiển chính (Logic UI & Ngôn ngữ)
+│   ├── storage.js      <-- Xử lý lưu file vào bộ nhớ trình duyệt
+│   └── downloader.js   <-- Tải và giải nén ZIP
+└── Media/
+    ├── topics/         <-- Dữ liệu gốc (Ảnh, MP3)
+    └── build-zip.sh    <-- Script nén ZIP chuẩn để upload GitHub
+</pre>
+    </div>
+
+    <h3>3. Lưu ý khi di chuyển sang dự án khác</h3>
+    <ul>
+        <li><span class="highlight">Đồng nhất ID:</span> ID trong <code>data.json</code> phải trùng tên folder chứa Media.</li>
+        <li><span class="highlight">Cấu trúc ZIP:</span> Khi nén ZIP, không được để folder cha bao ngoài. File <code>manifest.json</code> phải nằm ngay ở root của file ZIP.</li>
+        <li><span class="highlight">CORS:</span> Link tải ZIP (GitHub Releases) phải cho phép tải từ bên ngoài (thường GitHub đã hỗ trợ sẵn).</li>
+        <li><span class="highlight">Symlink:</span> Trên Arch Linux, dùng <code>ln -s</code> để tạo liên kết ảo giúp preview ảnh ngay lập tức mà không cần chờ nén/giải nén.</li>
+    </ul>
+</div>
+
+</body>
+</html>
