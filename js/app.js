@@ -67,7 +67,7 @@ const App = {
             }
 
             const section = document.createElement('div');
-            section.className = `accordion-section ${status === 'READY' ? 'is-ready' : ''}`;
+            section.className = `accordion-section ${status === 'READY' ? 'is-ready' : ''} topic-${topic.id}`;
             
             let actionHtml = '';
             if (status === 'DOWNLOAD') {
