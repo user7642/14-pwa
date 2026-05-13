@@ -3,44 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hướng dẫn cài đặt - KidSpeak</title>
+    <title>Hướng dẫn cài đặt - TVD Store</title>
     <link rel="icon" type="image/svg+xml" href="assets/branding/logo.svg">
-    <link rel="stylesheet" href="css/style.css">
     <style>
-        .guide-body { background: #f0f4f8; padding: 20px; font-family: sans-serif; }
-        .card { background: white; max-width: 650px; margin: 0 auto; border-radius: 20px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .warning-box { background: #fff5f5; border: 1px solid #feb2b2; padding: 15px; border-radius: 10px; margin-bottom: 25px; color: #c53030; }
-        h1 { color: #2196F3; text-align: center; }
-        h2 { font-size: 1.2rem; border-left: 4px solid #2196F3; padding-left: 10px; margin-top: 30px; }
-        .step { margin: 15px 0; display: flex; gap: 10px; }
-        .num { background: #2196F3; color: white; width: 25px; height: 25px; border-radius: 50%; display: flex; justify-content: center; align-items: center; flex-shrink: 0; font-weight: bold; }
-        .btn-home { display: block; width: 100%; text-align: center; background: #2196F3; color: white; padding: 15px; border-radius: 10px; text-decoration: none; font-weight: bold; margin-top: 30px; }
+        :root {
+            --primary: #4CAF50;
+            --secondary: #2196F3;
+            --bg: #f4f7f6;
+            --white: #ffffff;
+        }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: var(--bg); 
+            margin: 0; 
+            padding: 20px; 
+            color: #333;
+        }
+        .card { 
+            background: var(--white); 
+            max-width: 650px; 
+            margin: 0 auto; 
+            border-radius: 20px; 
+            padding: 30px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+        }
+
+        .warning-box { 
+            background: #fff5f5; 
+            border: 1px solid #feb2b2; 
+            padding: 15px; 
+            border-radius: 10px; 
+            margin-bottom: 25px; 
+            color: #c53030;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .copy-section {
+            background: #e3f2fd;
+            border: 1px dashed var(--secondary);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .copy-box {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        input#pwa-link {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 0.85rem;
+        }
+        .btn-copy {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        h1 { color: var(--secondary); text-align: center; margin-bottom: 25px; }
+        h2 { font-size: 1.15rem; border-left: 4px solid var(--secondary); padding-left: 10px; margin-top: 30px; color: #444; }
+        
+        .step { margin: 18px 0; display: flex; gap: 12px; align-items: flex-start; }
+        .num { 
+            background: var(--secondary); 
+            color: white; 
+            min-width: 26px; 
+            height: 26px; 
+            border-radius: 50%; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            font-weight: bold;
+            flex-shrink: 0;
+            font-size: 0.85rem;
+        }
+
+        .btn-home {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            background: #eee;
+            color: #555;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+        }
     </style>
 </head>
-<body class="guide-body">
+<body>
 
 <div class="card">
-    <h1>Cài đặt ứng dụng KidSpeak</h1>
-    
+    <h1>Hướng dẫn cài đặt</h1>
+
     <div class="warning-box">
-        <strong>⚠️ Lưu ý quan trọng:</strong> Tính năng cài đặt App (PWA) hiện tại hoạt động ổn định nhất trên trình duyệt <strong>Google Chrome</strong>. Các trình duyệt khác có thể đã lược bỏ tính năng này để tối ưu mã nguồn.
+        ⚠️ <b>Lưu ý quan trọng:</b> Tính năng cài đặt App (PWA) hiện tại hoạt động ổn định nhất trên trình duyệt <b>Google Chrome</b>. Các trình duyệt khác có thể đã lược bỏ tính năng này để tối ưu mã nguồn.
     </div>
 
-    <section>
-        <h2>💻 Cài đặt trên Máy tính (PC/Laptop)</h2>
-        <div class="step">
-            <div class="num">1</div>
-            <div>Mở website bằng trình duyệt <strong>Google Chrome</strong>.</div>
+    <div class="copy-section">
+        <p style="margin:0; font-weight: 600; color: #1565c0;">⚠️ Bạn đang mở từ Zalo, Facebook hoặc Shopee?</p>
+        <p style="margin:5px 0; font-size: 0.85rem; color: #666;">Hãy sao chép link dưới đây và dán vào <b>Chrome</b> hoặc <b>Safari</b> để cài đặt.</p>
+        <div class="copy-box">
+            <input type="text" id="pwa-link" value="https://user7642.github.io/14-pwa/" readonly>
+            <button class="btn-copy" onclick="copyLink()">Sao chép</button>
         </div>
-        <div class="step">
-            <div class="num">2</div>
-            <div>Nhìn lên <strong>thanh địa chỉ</strong> (góc bên phải), bạn sẽ thấy biểu tượng hình máy tính có mũi tên tải xuống <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH5AQKDA8S6f0U7AAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLm3VAAAAW0lEQVQ4y2NgGAWjYBSMAtIAAyD+D8S/gfg3EP8G4t9A/BuI/wPxbyD+DcT/gfg3EP8G4t9A/BuI/wPxbyD+DcT/gfg3EP8G4t9A/BuI/wPxbyD+D8S/gfg3GAU0AwAbHh4eHh4eHh4AAAAASUVORK5CYII=" alt="icon"> (Install).</div>
-        </div>
-        <div class="step">
-            <div class="num">3</div>
-            <div>Nhấn vào đó và chọn <strong>"Cài đặt"</strong>. Ứng dụng sẽ xuất hiện như một phần mềm riêng biệt trên Desktop.</div>
-        </div>
-    </section>
+    </div>
 
     <section>
         <h2>🤖 Cài đặt trên Android (Smartphone)</h2>
@@ -54,28 +130,66 @@
         </div>
         <div class="step">
             <div class="num">3</div>
+            <div>Chọn dòng <strong>"Thêm vào màn hình chính"</strong>.</div>
+        </div>
+        <div class="step">
+            <div class="num">4</div>
             <div>Chọn <strong>"Cài đặt ứng dụng"</strong> và nhấn <strong>"Cài đặt"</strong> để đưa ra màn hình chính.</div>
         </div>
     </section>
 
     <section>
-        <h2>🍎 Cho iPhone/iPad (iOS)</h2>
+        <h2>🍎 Cài đặt trên iPhone/iPad (iOS)</h2>
         <div class="step">
             <div class="num">1</div>
-            <div>Mở trình duyệt <strong>Safari</strong> (iOS yêu cầu Safari để cài đặt PWA).</div>
+            <div>Mở trình duyệt <strong>Safari</strong> (Bắt buộc).</div>
         </div>
         <div class="step">
             <div class="num">2</div>
-            <div>Nhấn biểu tượng <strong>Chia sẻ (Share)</strong> hình vuông có mũi tên lên ở dưới cùng.</div>
+            <div>Nhấn biểu tượng <strong>Chia sẻ (Share)</strong> hình ô vuông có mũi tên lên ở dưới cùng.</div>
         </div>
         <div class="step">
             <div class="num">3</div>
-            <div>Cuộn xuống chọn <strong>"Thêm vào màn hình chính"</strong> (Add to Home Screen).</div>
+            <div>Cuộn xuống và chọn <strong>"Thêm vào màn hình chính"</strong> (Add to Home Screen).</div>
         </div>
     </section>
 
-    <a href="index.html" class="btn-home">Quay lại ứng dụng</a>
+    <section>
+        <h2>💻 Cài đặt trên Máy tính (PC/Laptop)</h2>
+        <div class="step">
+            <div class="num">1</div>
+            <div>Mở website bằng trình duyệt <strong>Google Chrome</strong>.</div>
+        </div>
+        <div class="step">
+            <div class="num">2</div>
+            <div>Nhìn lên <strong>thanh địa chỉ</strong> (góc bên phải), bạn sẽ thấy biểu tượng hình máy tính có mũi tên tải xuống (Install).</div>
+        </div>
+        <div class="step">
+            <div class="num">3</div>
+            <div>Nhấn vào đó và chọn <strong>"Cài đặt"</strong>. Ứng dụng sẽ xuất hiện như một phần mềm riêng biệt trên Desktop.</div>
+        </div>
+    </section>
+
+    <a href="index.html" class="btn-home">Quay lại trang chính</a>
 </div>
+
+<script>
+    function copyLink() {
+        const copyText = document.getElementById("pwa-link");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(copyText.value);
+        
+        const btn = document.querySelector(".btn-copy");
+        btn.innerText = "Đã chép!";
+        btn.style.background = "#4CAF50";
+        
+        setTimeout(() => {
+            btn.innerText = "Sao chép";
+            btn.style.background = "#2196F3";
+        }, 2000);
+    }
+</script>
 
 </body>
 </html>
