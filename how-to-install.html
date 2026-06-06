@@ -33,8 +33,19 @@
             border: 1px solid #feb2b2; 
             padding: 15px; 
             border-radius: 10px; 
-            margin-bottom: 25px; 
+            margin-bottom: 15px; 
             color: #c53030;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .info-box {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            color: #166534;
             font-size: 0.95rem;
             line-height: 1.6;
         }
@@ -87,10 +98,29 @@
             font-size: 0.85rem;
         }
 
+        /* Thêm style cho phần liên hệ */
+        .contact-section {
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+        .contact-section a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+
         .btn-home {
             display: block;
             text-align: center;
-            margin-top: 30px;
+            margin-top: 20px;
             padding: 15px;
             background: #eee;
             color: #555;
@@ -107,6 +137,15 @@
 
     <div class="warning-box">
         ⚠️ <b>Lưu ý quan trọng:</b> Tính năng cài đặt App (PWA) hiện tại hoạt động ổn định nhất trên trình duyệt <b>Google Chrome</b>. Các trình duyệt khác có thể đã lược bỏ tính năng này để tối ưu mã nguồn.
+    </div>
+
+    <div class="info-box">
+        💡 <b>Hiểu về Ứng dụng PWA:</b>
+        <ul style="margin: 5px 0 0 0; padding-left: 20px;">
+            <li><b>Khác biệt:</b> Ứng dụng PWA có khả năng tải trước dữ liệu và <b>sử dụng ngoại tuyến (Offline)</b> như một ứng dụng thực thụ, không giống như các trang web thông thường.</li>
+            <li><b>Không bắt buộc cài đặt:</b> Bạn hoàn toàn có thể sử dụng trực tiếp trên trình duyệt bằng cách thêm vào mục "Dấu trang" (Bookmark) để mở lại lần sau. Tuy nhiên, <b>chỉ nên dùng cố định trên một trình duyệt hay dùng</b>, tránh mở trên nhiều trình duyệt khác nhau gây tốn dung lượng lưu trữ không cần thiết.</li>
+            <li><b>Bản chất việc cài đặt:</b> Khi bấm "Cài đặt", ứng dụng thực chất vẫn sử dụng nền tảng của trình duyệt để hiển thị nhưng sẽ ẩn đi thanh địa chỉ, giúp giao diện trông gọn gàng và hoạt động mượt mà giống hệt một App độc lập.</li>
+        </ul>
     </div>
 
     <div class="copy-section">
@@ -169,6 +208,12 @@
             <div>Nhấn vào đó và chọn <strong>"Cài đặt"</strong>. Ứng dụng sẽ xuất hiện như một phần mềm riêng biệt trên Desktop.</div>
         </div>
     </section>
+
+    <!-- ĐOẠN BỔ SUNG: Khối liên hệ hỗ trợ -->
+    <div class="contact-section">
+        💬 Bạn gặp khó khăn trong quá trình cài đặt hoặc có ý kiến đóng góp?<br>
+        Vui lòng gửi mail trực tiếp đến địa chỉ: <a href="mailto:trvndng@gmail.com">trvndng@gmail.com</a> để được hỗ trợ nhanh nhất.
+    </div>
 
     <a href="index.html" class="btn-home">Quay lại trang chính</a>
 </div>

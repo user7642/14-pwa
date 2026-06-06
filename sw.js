@@ -3,7 +3,7 @@
  * Hỗ trợ chạy Offline và quản lý Cache hệ thống
  */
 
-const CACHE_NAME = 'kidspeak-v3';
+const CACHE_NAME = 'kidspeak-v4';
 
 // Danh sách các tài nguyên hệ thống cần cache ngay khi cài đặt
 const ASSETS_TO_CACHE = [
