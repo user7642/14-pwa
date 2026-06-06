@@ -145,6 +145,29 @@ const App = {
         btn.innerText = `Đang tải: ${downloadState.progress}%`;
     },
 
+    async cleanupTopic(topicId) {
+        await StorageManager.removeDirectory(`media/${topicId}`);
+        localStorage.removeItem(`v_${topicId}`);
+    },
+
+    async retryTopic(topicId) {
+        const topic = this.config.topics.find(t => t.id === topicId);
+        if (!topic) return;
+
+        const section = document.querySelector(`.topic-${topicId}`);
+        const content = section?.querySelector('.accordion-content');
+        if (content) {
+            content.innerHTML = `
+                <div class="error">
+                    Dữ liệu chủ đề bị lỗi. Đang xóa và tải lại...
+                </div>`;
+        }
+
+        await this.cleanupTopic(topicId);
+        await this.updateTopicSection(topicId);
+        await this.handleDownload(topicId);
+    },
+
     async handleDownload(topicId) {
         const topic = this.config.topics.find(t => t.id === topicId);
         if (!topic) return;
@@ -278,8 +301,16 @@ const App = {
             }
         } catch (error) {
             console.error(`Lỗi renderTopicContent(${topicId}):`, error);
-            container.innerHTML = `<div class="error">Lỗi tải dữ liệu: ${error.message}</div>`;
+            this.renderTopicError(topicId, container, error.message);
         }
+    },
+
+    renderTopicError(topicId, container, message) {
+        container.innerHTML = `
+            <div class="error">
+                <p>${message}</p>
+                <button class="btn-retry" onclick="App.retryTopic('${topicId}')">Tải lại chủ đề</button>
+            </div>`;
     }
 };
 

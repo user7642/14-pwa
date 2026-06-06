@@ -37,6 +37,23 @@ export const StorageManager = {
         }
     },
 
+    async removeDirectory(path) {
+        try {
+            const parts = path.split('/');
+            const dirName = parts.pop();
+            let currentDir = await this.getRoot();
+
+            for (const part of parts) {
+                currentDir = await currentDir.getDirectoryHandle(part);
+            }
+            await currentDir.removeEntry(dirName, { recursive: true });
+            return true;
+        } catch (e) {
+            console.warn(`[StorageManager] Không xóa được thư mục OPFS: ${path}`, e.message);
+            return false;
+        }
+    },
+
     // HÀM QUAN TRỌNG CÒN THIẾU: Lấy file từ OPFS trả về File object
     async getFile(path) {
         try {

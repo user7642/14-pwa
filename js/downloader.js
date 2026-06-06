@@ -51,6 +51,8 @@ export const Downloader = {
 
             if (failCount > 0) {
                 console.warn(`[Downloader] Cảnh báo: ${failCount} file không được lưu thành công`);
+                await StorageManager.removeDirectory(`media/${topicId}`);
+                return false;
             }
 
             // Lưu phiên bản vào máy sau khi giải nén xong
@@ -60,6 +62,7 @@ export const Downloader = {
             return true;
         } catch (error) {
             console.error(`[Downloader] Lỗi tải ${topicId}:`, error);
+            await StorageManager.removeDirectory(`media/${topicId}`);
             return false;
         }
     }
