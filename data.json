@@ -1,0 +1,133 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-05-12",
+  "storagePrefix": "media/",
+  "topics": [
+    {
+      "id": "alphabet",
+      "title": { "vi": "Bảng chữ cái", "en": "Alphabet" },
+      "icon": "🔤",
+      "description": "Làm quen với bảng chữ cái tiếng Anh",
+      "zipUrl": "./assets/zips/alphabet.zip",
+      "size": "1MB",
+      "v": 1
+    },
+    {
+      "id": "numbers",
+      "title": { "vi": "Số đếm", "en": "Numbers" },
+      "icon": "🔢",
+      "description": "Học các con số cơ bản",
+      "zipUrl": "./assets/zips/numbers.zip",
+      "size": "2MB",
+      "v": 1
+    },
+    {
+      "id": "colors",
+      "title": { "vi": "Màu sắc", "en": "Colors" },
+      "icon": "🎨",
+      "description": "Nhận biết các màu sắc quen thuộc",
+      "zipUrl": "./assets/zips/colors.zip",
+      "size": "1MB",
+      "v": 1
+    },
+    {
+      "id": "shapes",
+      "title": { "vi": "Hình khối", "en": "Shapes" },
+      "icon": "🔺",
+      "description": "Tìm hiểu các hình dạng cơ bản",
+      "zipUrl": "./assets/zips/shapes.zip",
+      "size": "3MB",
+      "v": 1
+    },
+    {
+      "id": "body",
+      "title": { "vi": "Cơ thể", "en": "Body" },
+      "icon": "🧍",
+      "description": "Học tên các bộ phận cơ thể",
+      "zipUrl": "./assets/zips/body.zip",
+      "size": "30MB",
+      "v": 1
+    },
+    {
+      "id": "pets",
+      "title": { "vi": "Vật nuôi", "en": "Pets" },
+      "icon": "🐶",
+      "description": "Làm quen với các con vật gần gũi",
+      "zipUrl": "./assets/zips/pets.zip",
+      "size": "33",
+      "v": 1
+    },
+    {
+      "id": "fruits",
+      "title": { "vi": "Trái cây", "en": "Fruits" },
+      "icon": "🍎",
+      "description": "Khám phá các loại trái cây quen thuộc",
+      "zipUrl": "./assets/zips/fruits.zip",
+      "size": "31MB",
+      "v": 1
+    },
+    {
+      "id": "vegetables",
+      "title": { "vi": "Rau củ", "en": "Vegetables" },
+      "icon": "🥕",
+      "description": "Nhận biết các loại rau củ hằng ngày",
+      "zipUrl": "./assets/zips/vegetables.zip",
+      "size": "17MB",
+      "v": 1
+    },
+    {
+      "id": "vehicles",
+      "title": { "vi": "Phương tiện", "en": "Vehicles" },
+      "icon": "🚗",
+      "description": "Tìm hiểu các phương tiện giao thông",
+      "zipUrl": "./assets/zips/vehicles.zip",
+      "size": "43MB",
+      "v": 1
+    },
+    {
+      "id": "jobs",
+      "title": { "vi": "Nghề nghiệp", "en": "Jobs" },
+      "icon": "👨‍⚕️",
+      "description": "Khám phá các nghề nghiệp quen thuộc",
+      "zipUrl": "./assets/zips/jobs.zip",
+      "size": "31MB",
+      "v": 1
+    },
+    {
+      "id": "flowers",
+      "title": { "vi": "Hoa", "en": "Flowers" },
+      "icon": "🌸",
+      "description": "Tìm hiểu các loài hoa đẹp",
+      "zipUrl": "./assets/zips/flowers.zip",
+      "size": "32MB",
+      "v": 1
+    },
+    {
+      "id": "insects",
+      "title": { "vi": "Côn trùng", "en": "Insects" },
+      "icon": "🦋",
+      "description": "Làm quen với thế giới côn trùng",
+      "zipUrl": "./assets/zips/insects.zip",
+      "size": "37MB",
+      "v": 1
+    },
+    {
+      "id": "sea",
+      "title": { "vi": "Sinh vật biển", "en": "Sea Animals" },
+      "icon": "🐠",
+      "description": "Khám phá các loài sinh vật dưới biển",
+      "zipUrl": "./assets/zips/sea.zip",
+      "size": "50MB",
+      "v": 1
+    },
+    {
+      "id": "wild",
+      "title": { "vi": "Động vật hoang dã", "en": "Wild Animals" },
+      "icon": "🦁",
+      "description": "Tìm hiểu các loài động vật hoang dã",
+      "zipUrl": "./assets/zips/wild.zip",
+      "size": "43MB",
+      "v": 1
+    }
+  ]
+}

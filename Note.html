@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiến trúc Chi tiết Dự án KidSpeak PWA</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --bg: #f9f9f9;
+            --card-bg: #ffffff;
+            --code-bg: #2d2d2d;
+            --text: #333;
+        }
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); margin: 0; padding: 40px 20px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        header { text-align: center; border-bottom: 3px solid var(--accent); margin-bottom: 40px; padding-bottom: 20px; }
+        .section { background: var(--card-bg); padding: 25px; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        h2 { color: var(--primary); display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        h3 { color: var(--accent); margin-top: 20px; }
+        code { background: #eee; padding: 2px 6px; border-radius: 4px; font-family: 'Consolas', monospace; color: #d63384; }
+        pre { background: var(--code-bg); color: #fff; padding: 15px; border-radius: 8px; overflow-x: auto; font-size: 0.9em; }
+        .flow-step { background: #e8f4fd; padding: 15px; border-left: 5px solid var(--accent); margin: 10px 0; border-radius: 0 8px 8px 0; }
+        .highlight { font-weight: bold; color: var(--accent); }
+        .diag-box { border: 2px dashed #ccc; padding: 15px; margin: 15px 0; background: #fffcf0; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Tài liệu Kỹ thuật KidSpeak PWA</h1>
+        <p>Phân tích sâu về App Shell, Logic Render Accordion và Hệ thống Lưu trữ</p>
+    </header>
+
+    <div class="section">
+        <h2>📂 1. Chiến lược App Shell</h2>
+        <p>App Shell là tập hợp tối thiểu các mã HTML, CSS và JavaScript cần thiết để hiển thị giao diện người dùng ngay lập tức, đảm bảo ứng dụng có cảm giác "tức thì" khi mở.</p>
+        <ul>
+            <li><strong>Thành phần tĩnh:</strong> <code>index.html</code>, <code>style.css</code>, và các Logo thương hiệu.</li>
+            <li><strong>Cơ chế:</strong> Khi Service Worker cài đặt, nó sẽ "đóng băng" các file này vào <code>CACHE_NAME</code>. Lần mở tiếp theo, trình duyệt không cần tải lại từ mạng, giúp app hiện lên ngay cả khi mất mạng.</li>
+            <li><strong>Ưu điểm:</strong> Tách biệt phần "vỏ" (Shell) ổn định và phần "ruột" (Data) thay đổi thường xuyên qua <code>data.json</code>.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🎨 2. Quy trình Render & Logic Accordion</h2>
+        <p>Dự án sử dụng cơ chế <strong>Dynamic Client-side Rendering</strong>. Toàn bộ danh sách chủ đề được tạo ra sau khi Fetch dữ liệu JSON.</p>
+        
+        <h3>Tiến trình Render theo Accordion:</h3>
+        <div class="flow-step">
+            <strong>BƯỚC 1: Fetch Data</strong><br>
+            <code>app.js</code> gọi <code>fetch('data.json')</code> để lấy danh sách các <code>topics</code>.
+        </div>
+        <div class="flow-step">
+            <strong>BƯỚC 2: Duyệt vòng lặp (Mapping)</strong><br>
+            Với mỗi <code>topic</code> trong JSON, <code>ui-manager.js</code> tạo ra một cấu trúc HTML của thẻ Accordion (Thanh tiêu đề + Nội dung ẩn).
+        </div>
+        <div class="flow-step">
+            <strong>BƯỚC 3: Gắn sự kiện (Event Delegation)</strong><br>
+            Khi người dùng bấm vào tiêu đề Accordion:
+            <ul>
+                <li>Hệ thống kiểm tra xem dữ liệu Media của chủ đề đó đã có trong máy chưa (qua <code>storage.js</code>).</li>
+                <li>Nếu có: Mở rộng nội dung và hiển thị hình ảnh/âm thanh.</li>
+                <li>Nếu chưa: Hiển thị nút <strong>"Tải xuống"</strong> kèm thông tin <code>size</code>.</li>
+            </ul>
+        </div>
+        <p><em>Lưu ý:</em> Việc chỉ render nội dung bên trong khi Accordion mở giúp tiết kiệm tài nguyên RAM cho thiết bị yếu.</p>
+    </div>
+
+    <div class="section">
+        <h2>💾 3. Kiến trúc Lưu trữ & Quản lý Offline</h2>
+        <p>Dự án sử dụng mô hình lưu trữ đa tầng để quản lý dữ liệu hiệu quả:</p>
+        
+        <div class="diag-box">
+            <strong>Sơ đồ lưu trữ:</strong><br>
+            1. <strong>Service Worker Cache:</strong> Lưu file hệ thống (.html, .css, .js).<br>
+            2. <strong>IndexedDB (hoặc OPFS):</strong> Lưu dữ liệu Media (Ảnh, Âm thanh) sau khi giải nén từ file ZIP.<br>
+            3. <strong>LocalStorage:</strong> Lưu trạng thái người dùng (Ví dụ: Chủ đề nào đã tải xong, ngôn ngữ ưu tiên).
+        </div>
+
+        <h3>Cách thức hoạt động của Downloader:</h3>
+        <ol>
+            <li><strong>Tải file ZIP:</strong> <code>downloader.js</code> lấy link từ <code>zipUrl</code> trong <code>data.json</code>.</li>
+            <li><strong>Giải nén (Decompress):</strong> Sử dụng thư viện (như JSZip) để mở tệp ngay trên trình duyệt của khách hàng.</li>
+            <li><strong>Lưu trữ bền vững:</strong> Các file ảnh/âm thanh sau khi giải nén được lưu vào <strong>IndexedDB</strong> dưới dạng <code>Blob</code>.</li>
+            <li><strong>Ánh xạ (Mapping):</strong> Khi bé bấm vào hình, <code>app.js</code> sẽ tạo một URL tạm thời (Blob URL) từ IndexedDB để phát âm thanh mà không cần mạng.</li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>🛠️ 4. Lưu ý Bảo trì & Nâng cấp</h2>
+        <p>Để thay đổi nội dung, bạn chỉ cần tác động vào 2 vị trí:</p>
+        <ul>
+            <li><strong>Dữ liệu:</strong> Sửa <code>data.json</code> để thêm chủ đề hoặc thay đổi <code>size</code> thông báo.</li>
+            <li><strong>Logic:</strong> Nếu sửa CSS/JS, hãy nhớ tăng <code>v2</code>, <code>v3</code> trong <code>sw.js</code> để trình duyệt của khách hàng biết có bản cập nhật mới.</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

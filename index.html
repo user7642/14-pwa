@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KidSpeak - Học tiếng Anh cho bé</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/branding/logo.svg">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">KidSpeak</div>
+        <div class="lang-switch">
+            <button id="btn-vi" class="active">Tiếng Việt</button>
+            <button id="btn-en">English</button>
+        </div>
+    </header>
+
+<main id="app-container">
+        <div id="topic-accordion"></div>
+        <div class="user-guide-tips">
+         <span>👉 Bấm để mở chủ đề</span>
+        <span class="divider">|</span>
+        <span>🔊 Bấm hình để nghe</span>
+</div>
+    </main>
+
+    <footer class="site-footer">
+        <a href="https://shopee.vn/vndng" target="_blank" class="footer-link link-shopee">
+            🛒 <span>Shopee</span>
+        </a>
+        
+        <div class="footer-brand">
+            <img src="assets/branding/logo.svg" alt="Logo">
+            <span class="footer-copyright">© 2026 TVD Store</span>
+        </div>
+
+        <a href="how-to-install.html" class="footer-link link-guide">
+            📲 <span>Cài đặt</span>
+        </a>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

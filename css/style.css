@@ -1,0 +1,244 @@
+/* --- 1. Thiết lập cơ bản (Y hệt bản cũ) --- */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #2196F3;
+    --bg-color: #f4f7f6;
+    --text-color: #333;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Đảm bảo app luôn ở giữa trình duyệt */
+}
+
+/* --- 2. Khôi phục độ rộng Main (1000px - Không bị bóp nhỏ) --- */
+#app-container {
+    width: 100%;
+    max-width: 1000px; 
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 60px; /* Chừa chỗ cho footer */
+}
+
+/* --- 3. Header & Nút chọn ngôn ngữ --- */
+header {
+    background: var(--white);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.lang-switch button {
+    padding: 8px 15px;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-left: 5px;
+}
+
+.lang-switch button.active {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* --- 4. ACCORDION - Khôi phục lề hông 20px và Bo góc 10px --- */
+.accordion-section {
+    background: var(--white);
+    margin: 10px 20px; /* Đúng lề hông 20px của bạn */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.accordion-header {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center; /* CĂN GIỮA TIÊU ĐỀ TUYỆT ĐỐI */
+    align-items: center;
+    cursor: pointer;
+    position: relative;      /* Để nút .actions bám lề phải */
+    min-height: 65px;
+}
+
+/* Cấu trúc trung tâm: Icon + Text */
+.header-center-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.topic-icon { font-size: 1.5rem; }
+.topic-title { 
+    margin: 0; 
+    font-size: 1.1rem; 
+    font-weight: 600; 
+}
+
+/* Khối nút tải bên phải (Tuyệt đối để không đẩy lệch tiêu đề) */
+.actions {
+    position: absolute;
+    right: 20px;
+}
+
+.btn-download, .btn-update {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-weight: 500;
+}
+
+/* --- 5. GRID NỘI DUNG - Khôi phục chuẩn 130px và Gap 15px --- */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: #fafafa;
+    display: grid;
+    /* Thông số grid lấy chính xác từ file bạn gửi */
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 15px;
+    padding: 0 20px;
+}
+
+.accordion-content.active, .accordion-content.open {
+    max-height: 2500px;
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* --- 6. ITEM CARD - Bo góc 12px theo bản cũ --- */
+.item-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    cursor: pointer;
+}
+
+.item-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.item-card p {
+    margin: 0;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #555;
+    text-transform: capitalize;
+}
+
+.user-guide-tips {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Tùy chỉnh khoảng cách giữa các chữ */
+    width: 100%;
+}
+
+
+
+
+/* --- 2. Footer Siêu Hẹp & Căn Giữa Tuyệt Đối --- */
+.site-footer {
+    display: grid;
+    /* Cột 1: Shopee, Cột 2: Logo (tự động căn giữa), Cột 3: Cài đặt */
+    grid-template-columns: 1fr auto 1fr; 
+    align-items: center;
+    width: 100%;
+    height: 40px;          /* Chiều cao hẹp tối thiểu */
+    background-color: var(--white);
+    border-top: 1px solid #eee;
+    padding: 0 15px;
+    box-sizing: border-box;
+    flex-shrink: 0;        /* Không bao giờ cho phép footer bị bóp nghẹt */
+}
+
+/* Khối trung tâm (Logo & Copyright) */
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-self: center;  /* Luôn nằm chính giữa màn hình bất kể chữ 2 bên dài ngắn */
+}
+
+.footer-brand img {
+    width: 28px !important;
+    height: 28px !important;
+}
+
+.footer-copyright {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #194f99;
+    white-space: nowrap;
+}
+
+/* Các liên kết hai bên */
+.footer-link {
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+.link-shopee {
+    justify-self: start;   /* Ép sát lề trái */
+    color: #ee4d2d;
+}
+
+.link-guide {
+    justify-self: end;     /* Ép sát lề phải */
+    color: var(--secondary-color);
+}
+
+
+/* 6. Responsive */
+@media (max-width: 480px) {
+    .accordion-content {
+        grid-template-columns: repeat(3, 1fr); /* 3 cột trên mobile */
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .item-card p {
+        font-size: 0.8rem;
+    }
+}
